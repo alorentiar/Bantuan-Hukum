@@ -1,0 +1,50 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Center pillar & beam (Scales of Justice / Timbangan Keadilan) -->
+    <!-- Base pedestal -->
+    <path
+        android:fillColor="#F5A623"
+        android:pathData="M38,78h32v4h-32z" />
+    <path
+        android:fillColor="#FFE082"
+        android:pathData="M42,75h24v3h-24z" />
+    <!-- Vertical Column -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M52,32h4v43h-4z" />
+    <!-- Top Finial / Ball -->
+    <path
+        android:fillColor="#F5A623"
+        android:pathData="M54,30m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+    <!-- Cross Beam -->
+    <path
+        android:fillColor="#FFE082"
+        android:pathData="M27,35h54v3h-54z" />
+    <!-- Left Scale Strings -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.8"
+        android:pathData="M29,38L22,54 M29,38L36,54" />
+    <!-- Left Scale Pan -->
+    <path
+        android:fillColor="#F5A623"
+        android:pathData="M20,54h18c0,6 -4,10 -9,10s-9,-4 -9,-10z" />
+    <!-- Right Scale Strings -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.8"
+        android:pathData="M79,38L72,54 M79,38L86,54" />
+    <!-- Right Scale Pan -->
+    <path
+        android:fillColor="#F5A623"
+        android:pathData="M70,54h18c0,6 -4,10 -9,10s-9,-4 -9,-10z" />
+    <!-- Star of Justice at center -->
+    <path
+        android:fillColor="#F5A623"
+        android:pathData="M54,40l1.2,2.4 2.8,0.4 -2,2 0.5,2.7 -2.5,-1.3 -2.5,1.3 0.5,-2.7 -2,-2 2.8,-0.4z" />
+</vector>

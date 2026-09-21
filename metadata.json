@@ -1,0 +1,6 @@
+{
+  "name": "Bantuan Hukumku",
+  "description": "Basis data peraturan perundang-undangan Indonesia terintegrasi dengan pencarian offline Room FTS, hierarki UU No. 12/2011, dan ekspor PDF.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
