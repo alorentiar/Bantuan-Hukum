@@ -6,7 +6,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountTree
@@ -48,10 +50,25 @@ import com.example.ui.screens.PeraturanDetailScreen
 import com.example.ui.screens.SearchScreen
 import com.example.ui.theme.MyApplicationTheme
 
+import com.google.android.gms.ads.MobileAds
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        // Inisialisasi Google Mobile Ads SDK secara asynchronous di latar belakang
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                MobileAds.initialize(this@MainActivity) {}
+            } catch (e: Exception) {
+                // Graceful fallback jika Google Play Services belum siap
+            }
+        }
+
         setContent {
             MyApplicationTheme {
                 BantuanHukumApp()
@@ -96,32 +113,37 @@ fun BantuanHukumApp() {
         },
         bottomBar = {
             if (uiState.currentScreen != ScreenDestination.PASAL_DETAIL && uiState.selectedPeraturan == null) {
-                NavigationBar(
-                    containerColor = MaterialTheme.colorScheme.surface,
-                    tonalElevation = 3.dp,
-                    modifier = Modifier.testTag("main_bottom_nav")
-                ) {
-                    val navItems = listOf(
-                        Triple(ScreenDestination.SEARCH, "Cari", Icons.Default.Search),
-                        Triple(ScreenDestination.HIERARCHY, "Hierarki", Icons.Default.AccountTree),
-                        Triple(ScreenDestination.BOOKMARKS, "Tersimpan", Icons.Default.Bookmark),
-                        Triple(ScreenDestination.GUIDE, "Panduan", Icons.Default.MenuBook)
-                    )
+                Column(modifier = Modifier.fillMaxWidth()) {
+                    // Iklan Banner Google AdMob non-intrusif di atas bottom navigation
+                    com.example.ui.components.BannerAdView()
 
-                    navItems.forEach { (destination, label, icon) ->
-                        val isSelected = uiState.currentScreen == destination
-                        NavigationBarItem(
-                            selected = isSelected,
-                            onClick = { viewModel.navigateTo(destination) },
-                            icon = { Icon(imageVector = icon, contentDescription = label) },
-                            label = { Text(label) },
-                            colors = NavigationBarItemDefaults.colors(
-                                selectedIconColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                                indicatorColor = MaterialTheme.colorScheme.primaryContainer,
-                                selectedTextColor = MaterialTheme.colorScheme.primary
-                            ),
-                            modifier = Modifier.testTag("nav_item_${destination.name.lowercase()}")
+                    NavigationBar(
+                        containerColor = MaterialTheme.colorScheme.surface,
+                        tonalElevation = 3.dp,
+                        modifier = Modifier.testTag("main_bottom_nav")
+                    ) {
+                        val navItems = listOf(
+                            Triple(ScreenDestination.SEARCH, "Cari", Icons.Default.Search),
+                            Triple(ScreenDestination.HIERARCHY, "Hierarki", Icons.Default.AccountTree),
+                            Triple(ScreenDestination.BOOKMARKS, "Tersimpan", Icons.Default.Bookmark),
+                            Triple(ScreenDestination.GUIDE, "Panduan", Icons.Default.MenuBook)
                         )
+
+                        navItems.forEach { (destination, label, icon) ->
+                            val isSelected = uiState.currentScreen == destination
+                            NavigationBarItem(
+                                selected = isSelected,
+                                onClick = { viewModel.navigateTo(destination) },
+                                icon = { Icon(imageVector = icon, contentDescription = label) },
+                                label = { Text(label) },
+                                colors = NavigationBarItemDefaults.colors(
+                                    selectedIconColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                                    indicatorColor = MaterialTheme.colorScheme.primaryContainer,
+                                    selectedTextColor = MaterialTheme.colorScheme.primary
+                                ),
+                                modifier = Modifier.testTag("nav_item_${destination.name.lowercase()}")
+                            )
+                        }
                     }
                 }
             }
@@ -203,7 +225,7 @@ fun BantuanHukumApp() {
                 },
                 text = {
                     Text(
-                        text = "Aplikasi Bantuan Hukumku adalah basis data peraturan perundang-undangan Indonesia (UUD 1945, UU, PP, dsb.) yang bekerja 100% offline dengan pencarian cepat Full-Text Search (FTS).\n\nDISCLAIMER RESMI:\nHasil pencarian dan rujukan pasal adalah referensi informatif, bukan pengganti nasihat advokat berlisensi. Seluruh proses penelusuran berlangsung di perangkat Anda demi menjaga privasi penuh.",
+                        text = "Aplikasi Bantuan Hukumku adalah basis data peraturan perundang-undangan Indonesia (UUD 1945, UU, PP, dsb.) yang bekerja 100% offline dengan pencarian cepat Full-Text Search (FTS).\n\nDISCLAIMER & SUMBER DATA RESMI:\n1. Hasil pencarian dan rujukan pasal adalah referensi informatif, bukan pengganti nasihat advokat berlisensi.\n2. Aplikasi ini dikembangkan secara independen dan BUKAN merupakan aplikasi resmi pemerintah Republik Indonesia.\n3. Sumber resmi dokumen hukum: Jaringan Dokumentasi dan Informasi Hukum Nasional (JDIHN - jdihn.go.id) & Lembaran Negara RI.\n4. Iklan: Dilengkapi iklan banner Google AdMob non-intrusif guna mendukung keberlanjutan pengembangan aplikasi.",
                         style = MaterialTheme.typography.bodyMedium,
                         lineHeight = MaterialTheme.typography.bodyMedium.lineHeight * 1.3f
                     )

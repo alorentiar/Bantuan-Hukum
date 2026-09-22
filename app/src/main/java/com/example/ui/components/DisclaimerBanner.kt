@@ -80,10 +80,10 @@ fun DisclaimerBanner(
             AnimatedVisibility(visible = isExpanded) {
                 Column(modifier = Modifier.padding(top = 8.dp)) {
                     Text(
-                        text = "Hasil pencarian dan rujukan pasal dalam aplikasi Bantuan Hukumku adalah referensi informatif yang bersumber dari naskah resmi perundang-undangan RI. Seluruh isi tidak dapat dianggap sebagai pengganti nasihat, konsultasi, atau pendampingan hukum resmi dari advokat berlisensi.",
+                        text = "1. Hasil pencarian dan rujukan pasal adalah referensi informatif, bukan pengganti nasihat advokat berlisensi.\n2. Aplikasi ini dikembangkan secara independen dan TIDAK mewakili atau berafiliasi dengan lembaga pemerintah Republik Indonesia mana pun.\n3. Sumber Data: Naskah perundang-undangan dihimpun dari publikasi terbuka Jaringan Dokumentasi dan Informasi Hukum Nasional (JDIHN/jdihn.go.id) serta Lembaran Negara Republik Indonesia.",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        lineHeight = MaterialTheme.typography.bodySmall.lineHeight * 1.25f
+                        lineHeight = MaterialTheme.typography.bodySmall.lineHeight * 1.3f
                     )
                 }
             }

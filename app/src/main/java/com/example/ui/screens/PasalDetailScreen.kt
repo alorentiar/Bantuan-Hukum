@@ -130,12 +130,16 @@ fun PasalDetailScreen(
                     tonalElevation = 6.dp,
                     modifier = Modifier.fillMaxWidth()
                 ) {
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 16.dp, vertical = 12.dp),
-                        horizontalArrangement = Arrangement.spacedBy(10.dp)
-                    ) {
+                    Column(modifier = Modifier.fillMaxWidth()) {
+                        // Banner Iklan AdMob non-intrusif di bawah
+                        com.example.ui.components.BannerAdView()
+
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(horizontal = 16.dp, vertical = 12.dp),
+                            horizontalArrangement = Arrangement.spacedBy(10.dp)
+                        ) {
                         OutlinedButton(
                             onClick = {
                                 shareFullPasalText(context, details)
@@ -186,6 +190,7 @@ fun PasalDetailScreen(
                     }
                 }
             }
+        }
         },
         modifier = modifier
     ) { innerPadding ->
