@@ -21,6 +21,11 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-5269868767529777~7430422476" />
 
+        <!-- Start.io (StartApp) Application ID -->
+        <meta-data
+            android:name="com.startapp.sdk.APPLICATION_ID"
+            android:value="192739336" />
+
         <!-- Nonaktifkan logging otomatis analytics pada lingkungan tanpa konfigurasi FA -->
         <meta-data
             android:name="firebase_analytics_collection_deactivated"

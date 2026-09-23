@@ -1,9 +1,7 @@
 package com.example.ui.components
 
 import android.util.Log
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
+import android.view.View
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -16,7 +14,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -27,107 +24,86 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
-import com.google.android.gms.ads.AdListener
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdSize
-import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.LoadAdError
+import com.startapp.sdk.ads.banner.Banner
+import com.startapp.sdk.ads.banner.BannerListener
 
 /**
- * Komponen Banner Iklan Google AdMob non-intrusif di bagian bawah layar.
- * Memenuhi kebijakan Google Play Developer Program & Google Better Ads Standards:
- * - Ukuran terstandarisasi (Banner 320x50), tidak menutupi tombol navigasi atau konten utama.
- * - Bersembunyi secara halus (collapsible) saat perangkat offline atau iklan gagal dimuat.
- * - Dilengkapi label "IKLAN" mikro resmi untuk transparansi kepada pengguna.
+ * Konfigurasi Jaringan Iklan Start.io
  */
-object AdMobConfig {
+object StartIoConfig {
     /**
-     * ID Aplikasi AdMob akun pengembang:
-     * ca-app-pub-5269868767529777~7430422476
+     * ID Akun / Aplikasi Start.io pengembang dari file app-ads.txt:
+     * start.io, 192739336, DIRECT
      */
-    const val APP_ID = "ca-app-pub-5269868767529777~7430422476"
-
-    /**
-     * ID Unit Iklan Banner AdMob resmi dari dashboard (Basic Ads):
-     * ca-app-pub-5269868767529777/7286952246
-     */
-    const val BANNER_AD_UNIT_ID = "ca-app-pub-5269868767529777/7286952246"
-
-    /**
-     * ID Unit Iklan Banner resmi Google untuk testing & fallback otomatis.
-     */
-    const val TEST_BANNER_AD_UNIT_ID = "ca-app-pub-3940256099942544/6300978111"
+    const val APP_ID = "192739336"
 }
 
+/**
+ * Komponen Banner Iklan Eksklusif Start.io:
+ * Hanya menampilkan iklan banner resmi dari Start.io (App ID: 192739336).
+ * Memiliki tata letak bersih dan responsif di atas bilah navigasi utama.
+ */
 @Composable
 fun BannerAdView(
-    adUnitId: String = AdMobConfig.BANNER_AD_UNIT_ID,
     modifier: Modifier = Modifier
 ) {
-    var isAdLoaded by remember { mutableStateOf(false) }
-    var activeAdUnitId by remember(adUnitId) { mutableStateOf(adUnitId) }
-    var hasAttemptedFallback by remember { mutableStateOf(false) }
+    var isStartIoLoaded by remember { mutableStateOf(false) }
 
-    Box(
+    Column(
         modifier = modifier
             .fillMaxWidth()
-            .height(58.dp)
+            .wrapContentHeight()
             .background(MaterialTheme.colorScheme.surface)
-            .testTag("banner_ad_container"),
-        contentAlignment = Alignment.Center
+            .testTag("startio_banner_container"),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Column(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalAlignment = Alignment.CenterHorizontally
+        HorizontalDivider(
+            color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f),
+            thickness = 0.5.dp
+        )
+
+        Text(
+            text = if (isStartIoLoaded) "IKLAN START.IO" else "START.IO ADS",
+            fontSize = 8.sp,
+            fontWeight = FontWeight.Bold,
+            color = MaterialTheme.colorScheme.primary.copy(alpha = 0.8f),
+            modifier = Modifier.padding(top = 2.dp, bottom = 1.dp)
+        )
+
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(50.dp),
+            contentAlignment = Alignment.Center
         ) {
-            HorizontalDivider(
-                color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f),
-                thickness = 0.5.dp
-            )
-            Text(
-                text = if (isAdLoaded) "IKLAN GOOGLE ADMOB" else "RUANG IKLAN ADMOB",
-                fontSize = 8.sp,
-                fontWeight = FontWeight.SemiBold,
-                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
-                modifier = Modifier.padding(top = 1.dp)
-            )
-
-            key(activeAdUnitId) {
-                AndroidView(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(50.dp),
-                    factory = { context ->
-                        AdView(context).apply {
-                            setAdSize(AdSize.BANNER)
-                            this.adUnitId = activeAdUnitId
-                            adListener = object : AdListener() {
-                                override fun onAdLoaded() {
-                                    super.onAdLoaded()
-                                    isAdLoaded = true
-                                    Log.d("BannerAdView", "AdMob banner loaded successfully with ID: $activeAdUnitId")
-                                }
-
-                                override fun onAdFailedToLoad(error: LoadAdError) {
-                                    super.onAdFailedToLoad(error)
-                                    Log.w("BannerAdView", "AdMob banner failed to load ($activeAdUnitId): ${error.message} (Code ${error.code})")
-                                    // Jika ad unit baru AdMob belum aktif/masih tahap propagasi (Code 3 No Fill / Error),
-                                    // otomatis beralih sementara ke Google Test Banner agar pengembang dapat langsung melihat banner aktif
-                                    if (!hasAttemptedFallback && activeAdUnitId != AdMobConfig.TEST_BANNER_AD_UNIT_ID) {
-                                        hasAttemptedFallback = true
-                                        activeAdUnitId = AdMobConfig.TEST_BANNER_AD_UNIT_ID
-                                    }
-                                }
+            AndroidView(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(50.dp)
+                    .testTag("startio_banner_view"),
+                factory = { context ->
+                    Banner(context).apply {
+                        setBannerListener(object : BannerListener {
+                            override fun onReceiveAd(banner: View?) {
+                                isStartIoLoaded = true
+                                Log.d("StartIoAds", "Start.io banner ad received successfully!")
                             }
-                            try {
-                                loadAd(AdRequest.Builder().build())
-                            } catch (e: Exception) {
-                                Log.e("BannerAdView", "Failed to request AdMob banner", e)
+
+                            override fun onFailedToReceiveAd(banner: View?) {
+                                Log.w("StartIoAds", "Start.io banner ad failed to receive")
                             }
-                        }
+
+                            override fun onClick(banner: View?) {
+                                Log.d("StartIoAds", "Start.io banner clicked")
+                            }
+
+                            override fun onImpression(banner: View?) {
+                                Log.d("StartIoAds", "Start.io banner impression registered")
+                            }
+                        })
                     }
-                )
-            }
+                }
+            )
         }
     }
 }

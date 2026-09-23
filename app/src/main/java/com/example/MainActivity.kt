@@ -67,6 +67,14 @@ class MainActivity : ComponentActivity() {
             // Graceful fallback jika Google Play Services belum siap
         }
 
+        // Inisialisasi Start.io (StartApp) SDK
+        try {
+            com.startapp.sdk.adsbase.StartAppSDK.init(this, "192739336", false)
+            com.startapp.sdk.adsbase.StartAppSDK.enableReturnAds(false)
+        } catch (e: Exception) {
+            android.util.Log.w("MainActivity", "Start.io SDK init error", e)
+        }
+
         setContent {
             MyApplicationTheme {
                 BantuanHukumApp()
