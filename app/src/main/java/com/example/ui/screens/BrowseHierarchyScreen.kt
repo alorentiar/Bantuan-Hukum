@@ -110,7 +110,10 @@ fun BrowseHierarchyScreen(
         }
 
         // 7 Levels of Hierarchy
-        items(HierarchyLevel.entries.toTypedArray()) { level ->
+        items(
+            items = HierarchyLevel.entries.toTypedArray(),
+            key = { it.code }
+        ) { level ->
             val matchingRegulations = uiState.regulations.filter { reg ->
                 when (level) {
                     HierarchyLevel.UUD_1945 -> reg.jenis == "UUD_1945"
@@ -232,8 +235,9 @@ fun BrowseHierarchyScreen(
                                             verticalAlignment = Alignment.CenterVertically
                                         ) {
                                             Column(modifier = Modifier.weight(1f)) {
+                                                val displayTitle = if (reg.judul.contains(reg.nomor)) reg.judul else "${reg.judul} (${reg.nomor})"
                                                 Text(
-                                                    text = "${reg.judul} (${reg.nomor})",
+                                                    text = displayTitle,
                                                     style = MaterialTheme.typography.labelMedium,
                                                     fontWeight = FontWeight.Bold,
                                                     color = MaterialTheme.colorScheme.onSurface

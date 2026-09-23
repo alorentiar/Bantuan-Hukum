@@ -29,11 +29,20 @@ class LegalDataImporter(
 
     suspend fun importIfNeeded(): Boolean = withContext(Dispatchers.IO) {
         val count = database.peraturanDao().getCount()
-        if (count > 0) {
+        if (count >= 13) {
             val ftsCount = database.hukumSearchDao().getIndexCount()
             if (ftsCount > 0) {
                 Log.d(TAG, "Database already populated: $count regulations, $ftsCount FTS records.")
                 return@withContext false
+            }
+        }
+
+        // Jika data belum lengkap (< 13), bersihkan database lama agar impor bersih tanpa duplikasi
+        if (count > 0) {
+            try {
+                database.clearAllTables()
+            } catch (e: Exception) {
+                Log.w(TAG, "Failed clearing database tables before re-import", e)
             }
         }
 

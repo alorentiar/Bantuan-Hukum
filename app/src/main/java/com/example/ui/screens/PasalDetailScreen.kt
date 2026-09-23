@@ -5,6 +5,7 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -56,6 +57,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.data.local.model.PasalWithDetails
 import com.example.ui.LegalAppUiState
+import com.example.ui.components.BannerAdView
 import com.example.ui.components.DisclaimerBanner
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -69,6 +71,8 @@ fun PasalDetailScreen(
 ) {
     val context = LocalContext.current
     val details: PasalWithDetails? = uiState.currentPasalDetails
+
+    BackHandler(onBack = onBackClick)
 
     Scaffold(
         topBar = {
@@ -416,6 +420,11 @@ fun PasalDetailScreen(
                             }
                         }
                     }
+                }
+
+                // Google AdMob Banner
+                item {
+                    BannerAdView(modifier = Modifier.padding(vertical = 4.dp))
                 }
 
                 // Disclaimer Banner

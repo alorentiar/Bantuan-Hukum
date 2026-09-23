@@ -16,6 +16,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -41,17 +42,19 @@ import com.google.android.gms.ads.LoadAdError
  */
 object AdMobConfig {
     /**
-     * ID Aplikasi AdMob akun pengembang: ca-app-pub-5269868767529777~7430422476
+     * ID Aplikasi AdMob akun pengembang:
+     * ca-app-pub-5269868767529777~7430422476
      */
     const val APP_ID = "ca-app-pub-5269868767529777~7430422476"
 
     /**
-     * ID Unit Iklan Banner AdMob pengembang.
+     * ID Unit Iklan Banner AdMob resmi dari dashboard (Basic Ads):
+     * ca-app-pub-5269868767529777/7286952246
      */
-    const val BANNER_AD_UNIT_ID = "ca-app-pub-5269868767529777/7430422476"
+    const val BANNER_AD_UNIT_ID = "ca-app-pub-5269868767529777/7286952246"
 
     /**
-     * ID Unit Iklan Banner resmi Google untuk testing.
+     * ID Unit Iklan Banner resmi Google untuk testing & fallback otomatis.
      */
     const val TEST_BANNER_AD_UNIT_ID = "ca-app-pub-3940256099942544/6300978111"
 }
@@ -62,11 +65,13 @@ fun BannerAdView(
     modifier: Modifier = Modifier
 ) {
     var isAdLoaded by remember { mutableStateOf(false) }
+    var activeAdUnitId by remember(adUnitId) { mutableStateOf(adUnitId) }
+    var hasAttemptedFallback by remember { mutableStateOf(false) }
 
     Box(
         modifier = modifier
             .fillMaxWidth()
-            .wrapContentHeight()
+            .height(58.dp)
             .background(MaterialTheme.colorScheme.surface)
             .testTag("banner_ad_container"),
         contentAlignment = Alignment.Center
@@ -75,57 +80,54 @@ fun BannerAdView(
             modifier = Modifier.fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Garis pembatas halus antara konten/navigasi dan area iklan
-            if (isAdLoaded) {
-                HorizontalDivider(
-                    color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f),
-                    thickness = 0.5.dp
-                )
-                Text(
-                    text = "IKLAN",
-                    fontSize = 9.sp,
-                    fontWeight = FontWeight.SemiBold,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
-                    modifier = Modifier.padding(top = 2.dp)
-                )
-            }
+            HorizontalDivider(
+                color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f),
+                thickness = 0.5.dp
+            )
+            Text(
+                text = if (isAdLoaded) "IKLAN GOOGLE ADMOB" else "RUANG IKLAN ADMOB",
+                fontSize = 8.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
+                modifier = Modifier.padding(top = 1.dp)
+            )
 
-            AndroidView(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(if (isAdLoaded) 50.dp else 0.dp),
-                factory = { context ->
-                    AdView(context).apply {
-                        setAdSize(AdSize.BANNER)
-                        // Normalisasi otomatis format '~' (App ID) menjadi '/' (Ad Unit ID)
-                        val formattedAdUnitId = if (adUnitId.contains("~")) {
-                            adUnitId.replace('~', '/')
-                        } else {
-                            adUnitId
-                        }
-                        this.adUnitId = formattedAdUnitId
-                        adListener = object : AdListener() {
-                            override fun onAdLoaded() {
-                                super.onAdLoaded()
-                                isAdLoaded = true
-                                Log.d("BannerAdView", "AdMob banner loaded successfully.")
-                            }
+            key(activeAdUnitId) {
+                AndroidView(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(50.dp),
+                    factory = { context ->
+                        AdView(context).apply {
+                            setAdSize(AdSize.BANNER)
+                            this.adUnitId = activeAdUnitId
+                            adListener = object : AdListener() {
+                                override fun onAdLoaded() {
+                                    super.onAdLoaded()
+                                    isAdLoaded = true
+                                    Log.d("BannerAdView", "AdMob banner loaded successfully with ID: $activeAdUnitId")
+                                }
 
-                            override fun onAdFailedToLoad(error: LoadAdError) {
-                                super.onAdFailedToLoad(error)
-                                isAdLoaded = false
-                                Log.w("BannerAdView", "AdMob banner failed to load: ${error.message} (Code ${error.code})")
+                                override fun onAdFailedToLoad(error: LoadAdError) {
+                                    super.onAdFailedToLoad(error)
+                                    Log.w("BannerAdView", "AdMob banner failed to load ($activeAdUnitId): ${error.message} (Code ${error.code})")
+                                    // Jika ad unit baru AdMob belum aktif/masih tahap propagasi (Code 3 No Fill / Error),
+                                    // otomatis beralih sementara ke Google Test Banner agar pengembang dapat langsung melihat banner aktif
+                                    if (!hasAttemptedFallback && activeAdUnitId != AdMobConfig.TEST_BANNER_AD_UNIT_ID) {
+                                        hasAttemptedFallback = true
+                                        activeAdUnitId = AdMobConfig.TEST_BANNER_AD_UNIT_ID
+                                    }
+                                }
                             }
-                        }
-                        // Muat permintaan iklan
-                        try {
-                            loadAd(AdRequest.Builder().build())
-                        } catch (e: Exception) {
-                            Log.e("BannerAdView", "Failed to request AdMob banner", e)
+                            try {
+                                loadAd(AdRequest.Builder().build())
+                            } catch (e: Exception) {
+                                Log.e("BannerAdView", "Failed to request AdMob banner", e)
+                            }
                         }
                     }
-                }
-            )
+                )
+            }
         }
     }
 }

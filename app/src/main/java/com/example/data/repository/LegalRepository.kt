@@ -97,20 +97,24 @@ class LegalRepository(
             emptyList()
         }
 
-        val results = if (ftsResults.isNotEmpty()) {
-            ftsResults
-        } else {
-            // Fallback search jika FTS tidak menemukan hasil (misal kata sangat pendek atau tanda baca)
-            val fallbackWord = sanitizedTokens.firstOrNull() ?: trimmed
-            val rawList = database.hukumSearchDao().searchFallback(fallbackWord, limit = 80)
-            if (selectedCategory != null && selectedCategory.isNotEmpty() && selectedCategory != "SEMUA") {
-                rawList.filter { it.jenisPeraturan.equals(selectedCategory, ignoreCase = true) }
-            } else {
-                rawList
-            }
+        // Cari juga via fallback LIKE query untuk mencakup semua kalimat dengan kata kunci (misal 'perkawinan')
+        val fallbackWord = sanitizedTokens.firstOrNull() ?: trimmed
+        val rawLikeList = try {
+            database.hukumSearchDao().searchFallback(fallbackWord, limit = 60)
+        } catch (e: Exception) {
+            emptyList()
         }
 
-        // Mapping ke SearchResultItem dengan cuplikan (snippet) kontekstual
+        val filteredLikeList = if (selectedCategory != null && selectedCategory.isNotEmpty() && selectedCategory != "SEMUA") {
+            rawLikeList.filter { it.jenisPeraturan.equals(selectedCategory, ignoreCase = true) }
+        } else {
+            rawLikeList
+        }
+
+        // Gabungkan hasil FTS dan LIKE tanpa duplikasi
+        val results = (ftsResults + filteredLikeList).distinctBy { it.rowid }
+
+        // Mapping ke SearchResultItem dengan cuplikan (snippet) kalimat utuh yang memuat kata kunci
         results.map { fts ->
             val snippet = generateSnippet(fts.konten, sanitizedTokens)
             SearchResultItem(
@@ -131,14 +135,20 @@ class LegalRepository(
         }
     }
 
+    /**
+     * Mengekstrak kalimat lengkap yang memuat kata kunci pencarian.
+     * Contoh: Jika mencari 'perkawinan', akan mengekstrak seluruh kalimat yang memuat kata 'perkawinan'.
+     */
     private fun generateSnippet(text: String, keywords: List<String>): String {
         if (text.length <= 160) return text
 
         var firstIndex = -1
+        var matchedKeywordLen = 0
         for (kw in keywords) {
             val idx = text.indexOf(kw, ignoreCase = true)
             if (idx != -1 && (firstIndex == -1 || idx < firstIndex)) {
                 firstIndex = idx
+                matchedKeywordLen = kw.length
             }
         }
 
@@ -146,10 +156,27 @@ class LegalRepository(
             return text.take(160) + "..."
         }
 
-        val start = (firstIndex - 50).coerceAtLeast(0)
-        val end = (firstIndex + 110).coerceAtMost(text.length)
-        val prefix = if (start > 0) "..." else ""
-        val suffix = if (end < text.length) "..." else ""
-        return prefix + text.substring(start, end).trim() + suffix
+        // Cari batas awal kalimat (tanda titik, tanda seru, tanya, titik dua, atau baris baru sebelumnya)
+        val searchStart = (firstIndex - 1).coerceAtLeast(0)
+        val prevBound = text.lastIndexOfAny(charArrayOf('.', '!', '?', ';', '\n', ':'), searchStart)
+        val start = if (prevBound != -1) {
+            (prevBound + 1).coerceAtMost(text.length)
+        } else {
+            (firstIndex - 50).coerceAtLeast(0)
+        }
+
+        // Cari batas akhir kalimat (tanda titik, tanda seru, tanya, titik dua, atau baris baru sesudahnya)
+        val searchEnd = (firstIndex + matchedKeywordLen).coerceAtMost(text.length - 1)
+        val nextBound = text.indexOfAny(charArrayOf('.', '!', '?', ';', '\n'), searchEnd)
+        val end = if (nextBound != -1) {
+            (nextBound + 1).coerceAtMost(text.length)
+        } else {
+            (firstIndex + 140).coerceAtMost(text.length)
+        }
+
+        val extracted = text.substring(start, end).trim()
+        val prefix = if (start > 0 && !extracted.startsWith(".")) "... " else ""
+        val suffix = if (end < text.length && !extracted.endsWith(".")) " ..." else ""
+        return (prefix + extracted + suffix).trim()
     }
 }

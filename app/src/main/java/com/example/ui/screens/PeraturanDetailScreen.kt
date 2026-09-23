@@ -1,5 +1,6 @@
 package com.example.ui.screens
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -63,6 +64,8 @@ fun PeraturanDetailScreen(
 ) {
     val context = LocalContext.current
     val db = remember { AppDatabase.getInstance(context) }
+
+    BackHandler(onBack = onBackClick)
 
     Scaffold(
         topBar = {
@@ -145,7 +148,10 @@ fun PeraturanDetailScreen(
             }
 
             // Bab & Pasal items
-            items(babs) { bab ->
+            items(
+                items = babs,
+                key = { it.id }
+            ) { bab ->
                 BabAccordionItem(
                     bab = bab,
                     db = db,

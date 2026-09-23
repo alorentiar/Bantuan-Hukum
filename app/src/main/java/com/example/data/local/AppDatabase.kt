@@ -26,7 +26,7 @@ import com.example.data.local.entity.PeraturanEntity
         PenjelasanEntity::class,
         HukumSearchFts::class
     ],
-    version = 1,
+    version = 3,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {

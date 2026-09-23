@@ -60,13 +60,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        // Inisialisasi Google Mobile Ads SDK secara asynchronous di latar belakang
-        CoroutineScope(Dispatchers.IO).launch {
-            try {
-                MobileAds.initialize(this@MainActivity) {}
-            } catch (e: Exception) {
-                // Graceful fallback jika Google Play Services belum siap
-            }
+        // Inisialisasi Google Mobile Ads SDK
+        try {
+            MobileAds.initialize(this) {}
+        } catch (e: Exception) {
+            // Graceful fallback jika Google Play Services belum siap
         }
 
         setContent {
@@ -92,15 +90,9 @@ fun BantuanHukumApp() {
         }
     }
 
-    // Intercept back button for nested screens
-    BackHandler(enabled = uiState.currentScreen == ScreenDestination.PASAL_DETAIL || uiState.selectedPeraturan != null) {
-        if (uiState.currentScreen == ScreenDestination.PASAL_DETAIL) {
-            viewModel.navigateTo(ScreenDestination.SEARCH)
-        } else if (uiState.selectedPeraturan != null) {
-            viewModel.onSearchQueryChanged(uiState.searchQuery)
-            // clear selectedPeraturan
-            viewModel.navigateTo(uiState.currentScreen)
-        }
+    // Intercept back button for nested screens or non-search tabs
+    BackHandler(enabled = uiState.currentScreen == ScreenDestination.PASAL_DETAIL || uiState.selectedPeraturan != null || uiState.currentScreen != ScreenDestination.SEARCH) {
+        viewModel.navigateBack()
     }
 
     Scaffold(
@@ -155,7 +147,7 @@ fun BantuanHukumApp() {
             uiState.currentScreen == ScreenDestination.PASAL_DETAIL -> {
                 PasalDetailScreen(
                     uiState = uiState,
-                    onBackClick = { viewModel.navigateTo(ScreenDestination.SEARCH) },
+                    onBackClick = { viewModel.navigateBack() },
                     onToggleBookmark = { id, current -> viewModel.toggleBookmark(id, current) },
                     onExportPdf = { ctx -> viewModel.exportCurrentPasalToPdf(ctx) },
                     modifier = Modifier.padding(innerPadding)
@@ -166,10 +158,7 @@ fun BantuanHukumApp() {
                 PeraturanDetailScreen(
                     peraturan = uiState.selectedPeraturan!!,
                     babs = uiState.selectedPeraturanBabs,
-                    onBackClick = {
-                        // Clear selected regulation
-                        viewModel.onCategorySelected("SEMUA")
-                    },
+                    onBackClick = { viewModel.navigateBack() },
                     onSelectPasal = { id -> viewModel.selectPasal(id) },
                     modifier = Modifier.padding(innerPadding)
                 )

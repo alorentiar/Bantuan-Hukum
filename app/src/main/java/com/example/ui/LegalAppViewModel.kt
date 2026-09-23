@@ -24,6 +24,8 @@ class LegalAppViewModel(
     val uiState: StateFlow<LegalAppUiState> = _uiState.asStateFlow()
 
     private var searchJob: Job? = null
+    private var pasalDetailJob: Job? = null
+    private var peraturanBabJob: Job? = null
 
     init {
         initDatabaseAndData()
@@ -78,31 +80,84 @@ class LegalAppViewModel(
     }
 
     fun navigateTo(destination: ScreenDestination) {
-        _uiState.update { it.copy(currentScreen = destination) }
+        pasalDetailJob?.cancel()
+        peraturanBabJob?.cancel()
+        _uiState.update {
+            it.copy(
+                currentScreen = destination,
+                selectedPeraturan = null,
+                selectedPeraturanBabs = emptyList(),
+                selectedPasalId = null,
+                currentPasalDetails = null
+            )
+        }
+    }
+
+    /**
+     * Navigasi kembali yang aman dan andal ke layar sebelumnya atau halaman utama (SEARCH).
+     */
+    fun navigateBack() {
+        pasalDetailJob?.cancel()
+        _uiState.update { state ->
+            when {
+                // Jika sedang di detail pasal, kembali ke layar asal (bisa SEARCH, HIERARCHY, BOOKMARKS, atau detail Peraturan)
+                state.currentScreen == ScreenDestination.PASAL_DETAIL -> {
+                    state.copy(
+                        currentScreen = state.previousScreen,
+                        selectedPasalId = null,
+                        currentPasalDetails = null
+                    )
+                }
+                // Jika sedang melihat rincian suatu Peraturan, tutup detail peraturan dan kembali ke daftar
+                state.selectedPeraturan != null -> {
+                    peraturanBabJob?.cancel()
+                    state.copy(
+                        selectedPeraturan = null,
+                        selectedPeraturanBabs = emptyList()
+                    )
+                }
+                // Jika di tab selain Beranda/Pencarian, kembali ke Beranda/Pencarian
+                state.currentScreen != ScreenDestination.SEARCH -> {
+                    state.copy(currentScreen = ScreenDestination.SEARCH)
+                }
+                else -> state
+            }
+        }
     }
 
     fun selectPasal(pasalId: Long) {
-        viewModelScope.launch {
+        pasalDetailJob?.cancel()
+        _uiState.update {
+            val prev = if (it.currentScreen != ScreenDestination.PASAL_DETAIL) it.currentScreen else it.previousScreen
+            it.copy(
+                selectedPasalId = pasalId,
+                previousScreen = prev,
+                currentScreen = ScreenDestination.PASAL_DETAIL
+            )
+        }
+
+        pasalDetailJob = viewModelScope.launch {
             repository.getPasalWithDetails(pasalId).collectLatest { details ->
                 _uiState.update {
-                    it.copy(
-                        selectedPasalId = pasalId,
-                        currentPasalDetails = details,
-                        currentScreen = ScreenDestination.PASAL_DETAIL
-                    )
+                    it.copy(currentPasalDetails = details)
                 }
             }
         }
     }
 
     fun selectPeraturan(peraturan: PeraturanEntity) {
-        viewModelScope.launch {
+        peraturanBabJob?.cancel()
+        _uiState.update {
+            it.copy(
+                selectedPeraturan = peraturan,
+                selectedPeraturanBabs = emptyList()
+            )
+        }
+
+        peraturanBabJob = viewModelScope.launch {
             repository.getBabsByPeraturan(peraturan.id).collectLatest { babs ->
                 _uiState.update {
-                    it.copy(
-                        selectedPeraturan = peraturan,
-                        selectedPeraturanBabs = babs
-                    )
+                    it.copy(selectedPeraturanBabs = babs)
                 }
             }
         }

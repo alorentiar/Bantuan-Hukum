@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ad-services-config>
+    <!-- Mencegah kegagalan pengikatan adservices measurement pada lingkungan emulator atau perangkat tanpa Privacy Sandbox -->
+    <attribution allowAdPartners="false" />
+</ad-services-config>

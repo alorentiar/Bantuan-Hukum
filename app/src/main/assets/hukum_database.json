@@ -759,6 +759,818 @@
           ]
         }
       ]
+    },
+    {
+      "jenis": "UU",
+      "nomor": "Nomor 1",
+      "tahun": 1974,
+      "judul": "Undang-Undang Republik Indonesia Nomor 1 Tahun 1974 tentang Perkawinan",
+      "tentang": "Perkawinan (sebagaimana telah diubah dengan Undang-Undang Nomor 16 Tahun 2019)",
+      "tanggalPenetapan": "2 Januari 1974",
+      "status": "Berlaku",
+      "urutanHierarki": 3,
+      "deskripsiSingkat": "Mengatur hukum perkawinan nasional di Indonesia, syarat-syarat sahnya perkawinan, batas usia nikah 19 tahun, hak serta kewajiban suami isteri, harta bersama, dan akibat hukum perceraian.",
+      "babs": [
+        {
+          "nomorBab": "Bab I",
+          "judulBab": "Dasar Perkawinan",
+          "urutan": 1,
+          "pasals": [
+            {
+              "nomorPasal": "Pasal 1",
+              "judulPasal": "Pengertian dan Hakikat Perkawinan",
+              "urutan": 1,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "Definisi",
+                  "isiAyat": "Perkawinan ialah ikatan lahir bathin antara seorang pria dengan seorang wanita sebagai suami isteri dengan tujuan membentuk keluarga (rumah tangga) yang bahagia dan kekal berdasarkan Ketuhanan Yang Mahaesa."
+                }
+              ],
+              "penjelasans": [
+                {
+                  "nomorPenjelasan": "Pasal 1",
+                  "isiPenjelasan": "Sebagai negara berketuhanan Yang Maha Esa, perkawinan mempunyai hubungan yang sangat erat dengan agama dan kerohanian, sehingga perkawinan bukan saja mempunyai unsur lahir tetapi juga unsur batin yang sangat penting."
+                }
+              ]
+            },
+            {
+              "nomorPasal": "Pasal 2",
+              "judulPasal": "Sahnya Perkawinan dan Pencatatan",
+              "urutan": 2,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "(1)",
+                  "isiAyat": "Perkawinan adalah sah, apabila dilakukan menurut hukum masing-masing agamanya dan kepercayaannya itu."
+                },
+                {
+                  "nomorAyat": 2,
+                  "labelAyat": "(2)",
+                  "isiAyat": "Tiap-tiap perkawinan dicatat menurut peraturan perundang-undangan yang berlaku."
+                }
+              ],
+              "penjelasans": [
+                {
+                  "nomorPenjelasan": "Pasal 2",
+                  "isiPenjelasan": "Pencatatan tiap-tiap perkawinan adalah sama halnya dengan pencatatan peristiwa-peristiwa penting dalam kehidupan seseorang, misalnya kelahiran, kematian yang dinyatakan dalam akta-akta resmi."
+                }
+              ]
+            },
+            {
+              "nomorPasal": "Pasal 3",
+              "judulPasal": "Asas Monogami dalam Perkawinan",
+              "urutan": 3,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "(1)",
+                  "isiAyat": "Pada azasnya dalam suatu perkawinan seorang pria hanya boleh mempunyai seorang isteri. Seorang wanita hanya boleh mempunyai seorang suami."
+                },
+                {
+                  "nomorAyat": 2,
+                  "labelAyat": "(2)",
+                  "isiAyat": "Pengadilan dapat memberi izin kepada seorang suami untuk beristeri lebih dari seorang apabila dikehendaki oleh pihak-pihak yang bersangkutan dengan syarat-syarat yang ketat sesuai ketentuan hukum."
+                }
+              ],
+              "penjelasans": []
+            }
+          ]
+        },
+        {
+          "nomorBab": "Bab II",
+          "judulBab": "Syarat-Syarat Perkawinan",
+          "urutan": 2,
+          "pasals": [
+            {
+              "nomorPasal": "Pasal 6",
+              "judulPasal": "Persetujuan Mempelai dan Izin Orang Tua",
+              "urutan": 1,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "(1)",
+                  "isiAyat": "Perkawinan harus didasarkan atas persetujuan kedua calon mempelai tanpa adanya paksaan dari pihak manapun."
+                },
+                {
+                  "nomorAyat": 2,
+                  "labelAyat": "(2)",
+                  "isiAyat": "Untuk melangsungkan perkawinan seorang yang belum mencapai umur 21 (dua puluh satu) tahun harus mendapat izin kedua orang tua."
+                }
+              ],
+              "penjelasans": []
+            },
+            {
+              "nomorPasal": "Pasal 7",
+              "judulPasal": "Batas Usia Minimal Perkawinan (UU No. 16/2019)",
+              "urutan": 2,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "(1)",
+                  "isiAyat": "Perkawinan hanya diizinkan apabila pria dan wanita sudah mencapai umur 19 (sembilan belas) tahun."
+                },
+                {
+                  "nomorAyat": 2,
+                  "labelAyat": "(2)",
+                  "isiAyat": "Dalam hal terjadi penyimpangan terhadap ketentuan umur sebagaimana dimaksud pada ayat (1), orang tua pihak pria dan/atau orang tua pihak wanita dapat meminta dispensasi kepada Pengadilan dengan alasan sangat mendesak disertai bukti-bukti pendukung yang cukup."
+                }
+              ],
+              "penjelasans": [
+                {
+                  "nomorPenjelasan": "Pasal 7",
+                  "isiPenjelasan": "Perubahan batas usia perkawinan bagi wanita dari 16 tahun menjadi 19 tahun disamakan dengan pria berdasarkan UU No. 16 Tahun 2019 untuk melindungi kesehatan anak dan menjamin kesiapan mental berumah tangga."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nomorBab": "Bab VI",
+          "judulBab": "Hak dan Kewajiban Suami Isteri",
+          "urutan": 3,
+          "pasals": [
+            {
+              "nomorPasal": "Pasal 30",
+              "judulPasal": "Kewajiban Menegakkan Rumah Tangga",
+              "urutan": 1,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "Kewajiban",
+                  "isiAyat": "Suami isteri memikul kewajiban yang luhur untuk menegakkan rumah tangga yang menjadi sendi dasar dari susunan masyarakat."
+                }
+              ],
+              "penjelasans": []
+            },
+            {
+              "nomorPasal": "Pasal 31",
+              "judulPasal": "Kedudukan Seimbang Suami dan Isteri",
+              "urutan": 2,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "(1)",
+                  "isiAyat": "Hak dan kedudukan isteri adalah seimbang dengan hak dan kedudukan suami dalam kehidupan rumah tangga dan pergaulan hidup bersama dalam masyarakat."
+                },
+                {
+                  "nomorAyat": 2,
+                  "labelAyat": "(2)",
+                  "isiAyat": "Masing-masing pihak berhak untuk melakukan perbuatan hukum."
+                },
+                {
+                  "nomorAyat": 3,
+                  "labelAyat": "(3)",
+                  "isiAyat": "Suami adalah kepala keluarga dan isteri ibu rumah tangga."
+                }
+              ],
+              "penjelasans": []
+            }
+          ]
+        },
+        {
+          "nomorBab": "Bab VII",
+          "judulBab": "Harta Benda dalam Perkawinan",
+          "urutan": 4,
+          "pasals": [
+            {
+              "nomorPasal": "Pasal 35",
+              "judulPasal": "Harta Bersama dan Harta Bawaan",
+              "urutan": 1,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "(1)",
+                  "isiAyat": "Harta benda yang diperoleh selama perkawinan menjadi harta bersama."
+                },
+                {
+                  "nomorAyat": 2,
+                  "labelAyat": "(2)",
+                  "isiAyat": "Harta bawaan dari masing-masing suami dan isteri dan harta benda yang diperoleh masing-masing sebagai hadiah atau warisan, adalah di bawah penguasaan masing-masing sepanjang para pihak tidak menentukan lain."
+                }
+              ],
+              "penjelasans": [
+                {
+                  "nomorPenjelasan": "Pasal 35",
+                  "isiPenjelasan": "Harta bersama dalam perkawinan dapat digunakan dan diatur atas persetujuan kedua belah pihak suami isteri, kecuali ada perjanjian perkawinan tertulis sebelumnya."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nomorBab": "Bab VIII",
+          "judulBab": "Putusnya Perkawinan dan Akibatnya",
+          "urutan": 5,
+          "pasals": [
+            {
+              "nomorPasal": "Pasal 38",
+              "judulPasal": "Penyebab Putusnya Perkawinan",
+              "urutan": 1,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "Sebab",
+                  "isiAyat": "Perkawinan dapat putus karena: a. kematian, b. perceraian, dan c. atas putusan Pengadilan."
+                }
+              ],
+              "penjelasans": []
+            },
+            {
+              "nomorPasal": "Pasal 39",
+              "judulPasal": "Tata Cara Perceraian di Sidang Pengadilan",
+              "urutan": 2,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "(1)",
+                  "isiAyat": "Perceraian hanya dapat dilakukan di depan sidang Pengadilan setelah Pengadilan yang bersangkutan berusaha dan tidak berhasil mendamaikan kedua belah pihak."
+                },
+                {
+                  "nomorAyat": 2,
+                  "labelAyat": "(2)",
+                  "isiAyat": "Untuk melakukan perceraian harus ada cukup alasan, bahwa antara suami isteri itu tidak akan dapat hidup rukun sebagai suami isteri dalam perkawinan."
+                }
+              ],
+              "penjelasans": []
+            },
+            {
+              "nomorPasal": "Pasal 41",
+              "judulPasal": "Akibat Putusnya Perkawinan karena Perceraian",
+              "urutan": 3,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "Akibat",
+                  "isiAyat": "Akibat putusnya perkawinan karena perceraian ialah: a. Baik ibu atau bapak tetap berkewajiban memelihara dan mendidik anak-anaknya, semata-mata berdasarkan kepentingan anak; bilamana ada perselisihan mengenai penguasaan anak-anak, Pengadilan memberi keputusannya; b. Bapak yang bertanggung jawab atas semua biaya pemeliharaan dan pendidikan yang diperlukan anak itu; bilamana bapak dalam kenyataan tidak dapat memenuhi kewajiban tersebut, Pengadilan dapat menentukan bahwa ibu ikut memikul biaya tersebut; c. Pengadilan dapat mewajibkan kepada bekas suami untuk memberikan biaya penghidupan dan/atau menentukan sesuatu kewajiban bagi bekas isteri."
+                }
+              ],
+              "penjelasans": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "jenis": "TAP_MPR",
+      "nomor": "Nomor I/MPR/2003",
+      "tahun": 2003,
+      "judul": "Ketetapan MPR RI Nomor I/MPR/2003",
+      "tentang": "Peninjauan Terhadap Materi dan Status Hukum Ketetapan MPRS dan Ketetapan MPR RI Tahun 1960 sampai dengan Tahun 2002",
+      "tanggalPenetapan": "10 Agustus 2003",
+      "status": "Berlaku",
+      "urutanHierarki": 2,
+      "deskripsiSingkat": "Menata dan menentukan keabsahan serta keberlakuan seluruh Ketetapan MPRS dan Ketetapan MPR RI sejak tahun 1960 hingga tahun 2002.",
+      "babs": [
+        {
+          "nomorBab": "Bab I",
+          "judulBab": "Klasifikasi Status Hukum Ketetapan MPRS dan MPR",
+          "urutan": 1,
+          "pasals": [
+            {
+              "nomorPasal": "Pasal 1",
+              "judulPasal": "Ketetapan MPRS dan MPR yang Dicabut dan Tidak Berlaku",
+              "urutan": 1,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "Pasal 1",
+                  "isiAyat": "Ketetapan Majelis Permusyawaratan Rakyat Sementara dan Ketetapan Majelis Permusyawaratan Rakyat Republik Indonesia yang dicabut dan dinyatakan tidak berlaku terdiri atas 8 (delapan) Ketetapan."
+                }
+              ],
+              "penjelasans": []
+            },
+            {
+              "nomorPasal": "Pasal 2",
+              "judulPasal": "Ketetapan yang Tetap Berlaku dengan Ketentuan",
+              "urutan": 2,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "Pasal 2",
+                  "isiAyat": "Ketetapan Majelis Permusyawaratan Rakyat Sementara dan Ketetapan Majelis Permusyawaratan Rakyat Republik Indonesia yang dinyatakan tetap berlaku dengan ketentuan sampai dengan terbentuknya undang-undang, antara lain Ketetapan MPRS Nomor XXV/MPRS/1966 tentang Pembubaran Partai Komunis Indonesia dan Larangan Komunisme/Marxisme-Leninisme."
+                }
+              ],
+              "penjelasans": []
+            },
+            {
+              "nomorPasal": "Pasal 4",
+              "judulPasal": "Ketetapan yang Tetap Berlaku sampai Masa Jabatan Berakhir",
+              "urutan": 3,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "Pasal 4",
+                  "isiAyat": "Ketetapan Majelis Permusyawaratan Rakyat Republik Indonesia yang dinyatakan tetap berlaku sampai dengan terbentuknya pemerintahan hasil pemilihan umum 2004."
+                }
+              ],
+              "penjelasans": []
+            },
+            {
+              "nomorPasal": "Pasal 6",
+              "judulPasal": "Ketetapan yang Selesai Dilaksanakan (Final)",
+              "urutan": 4,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "Pasal 6",
+                  "isiAyat": "Ketetapan Majelis Permusyawaratan Rakyat Sementara dan Ketetapan Majelis Permusyawaratan Rakyat Republik Indonesia yang tidak perlu dilakukan tindakan hukum lebih lanjut, baik karena bersifat final (einmalig), telah dicabut, maupun telah selesai dilaksanakan."
+                }
+              ],
+              "penjelasans": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "jenis": "TAP_MPR",
+      "nomor": "Nomor XVI/MPR/1998",
+      "tahun": 1998,
+      "judul": "Ketetapan MPR RI Nomor XVI/MPR/1998",
+      "tentang": "Politik Ekonomi dalam Rangka Demokrasi Ekonomi",
+      "tanggalPenetapan": "13 November 1998",
+      "status": "Berlaku",
+      "urutanHierarki": 2,
+      "deskripsiSingkat": "Menegaskan arah kebijakan ekonomi nasional yang berpihak pada keadilan, pemberdayaan usaha mikro kecil menengah dan koperasi, serta pencegahan praktik monopoli.",
+      "babs": [
+        {
+          "nomorBab": "Pasal-Pasal Ketetapan",
+          "judulBab": "Arah Demokrasi Ekonomi",
+          "urutan": 1,
+          "pasals": [
+            {
+              "nomorPasal": "Pasal 1",
+              "judulPasal": "Prinsip Demokrasi Ekonomi",
+              "urutan": 1,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "Pasal 1",
+                  "isiAyat": "Politik ekonomi nasional diarahkan untuk mewujudkan keadilan sosial bagi seluruh rakyat Indonesia melalui pembangunan ekonomi yang berakar pada potensi rakyat banyak dan bertumpu pada mekanisme pasar yang adil."
+                }
+              ],
+              "penjelasans": []
+            },
+            {
+              "nomorPasal": "Pasal 2",
+              "judulPasal": "Pemberdayaan Usaha Kecil, Menengah dan Koperasi",
+              "urutan": 2,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "Pasal 2",
+                  "isiAyat": "Pemerintah dan lembaga negara berkewajiban memberikan prioritas dan keberpihakan kepada usaha mikro, kecil, menengah, dan koperasi dalam permodalan, perizinan, dan perlindungan usaha dari persaingan tidak sehat."
+                }
+              ],
+              "penjelasans": []
+            },
+            {
+              "nomorPasal": "Pasal 3",
+              "judulPasal": "Pencegahan Monopoli dan Oligopoli",
+              "urutan": 3,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "Pasal 3",
+                  "isiAyat": "Segala bentuk pemusatan kekuatan ekonomi pada perseorangan atau kelompok dalam bentuk monopoli dan monopsoni yang merugikan masyarakat dan bertentangan dengan keadilan sosial dilarang."
+                }
+              ],
+              "penjelasans": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "jenis": "PERPRES",
+      "nomor": "Nomor 16",
+      "tahun": 2018,
+      "judul": "Peraturan Presiden Republik Indonesia Nomor 16 Tahun 2018",
+      "tentang": "Pengadaan Barang/Jasa Pemerintah (diubah dengan Perpres No. 12 Tahun 2021)",
+      "tanggalPenetapan": "16 Maret 2018",
+      "status": "Berlaku",
+      "urutanHierarki": 5,
+      "deskripsiSingkat": "Pedoman pelaksanaan pengadaan barang dan jasa oleh kementerian, lembaga, dan pemerintah daerah yang transparan, akuntabel, dan bebas KKN.",
+      "babs": [
+        {
+          "nomorBab": "Bab I",
+          "judulBab": "Ketentuan Umum dan Ruang Lingkup",
+          "urutan": 1,
+          "pasals": [
+            {
+              "nomorPasal": "Pasal 1",
+              "judulPasal": "Definisi Pengadaan Barang dan Jasa Pemerintah",
+              "urutan": 1,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "Angka 1",
+                  "isiAyat": "Pengadaan Barang/Jasa Pemerintah yang selanjutnya disebut Pengadaan Barang/Jasa adalah kegiatan Pengadaan Barang/Jasa oleh Kementerian/Lembaga/Perangkat Daerah yang dibiayai oleh APBN/APBD yang prosesnya sejak identifikasi kebutuhan, sampai dengan serah terima hasil pekerjaan."
+                }
+              ],
+              "penjelasans": []
+            },
+            {
+              "nomorPasal": "Pasal 4",
+              "judulPasal": "Tujuan Pengadaan Barang/Jasa Pemerintah",
+              "urutan": 2,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "Tujuan",
+                  "isiAyat": "Pengadaan Barang/Jasa bertujuan untuk: menghasilkan barang/jasa yang tepat dari setiap uang yang dibelanjakan, diukur dari aspek kualitas, jumlah, waktu, biaya, lokasi, dan penyedia; meningkatkan penggunaan produk dalam negeri; meningkatkan peran serta Usaha Mikro, Usaha Kecil, dan Koperasi; serta meningkatkan transparansi dan akuntabilitas."
+                }
+              ],
+              "penjelasans": []
+            }
+          ]
+        },
+        {
+          "nomorBab": "Bab II",
+          "judulBab": "Prinsip dan Etika Pengadaan Barang/Jasa",
+          "urutan": 2,
+          "pasals": [
+            {
+              "nomorPasal": "Pasal 6",
+              "judulPasal": "Prinsip Pengadaan Barang/Jasa",
+              "urutan": 1,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "Prinsip",
+                  "isiAyat": "Pengadaan Barang/Jasa menerapkan prinsip: a. efisien; b. efektif; c. transparan; d. terbuka; e. bersaing; f. adil; dan g. akuntabel."
+                }
+              ],
+              "penjelasans": []
+            },
+            {
+              "nomorPasal": "Pasal 7",
+              "judulPasal": "Etika Pengadaan Barang/Jasa",
+              "urutan": 2,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "(1)",
+                  "isiAyat": "Semua pihak yang terlibat dalam Pengadaan Barang/Jasa mematuhi etika: melaksanakan tugas secara tertib, disertai rasa tanggung jawab; bekerja secara profesional, mandiri, dan jujur; tidak saling mempengaruhi yang berakibat persaingan usaha tidak sehat; menerima dan bertanggung jawab atas segala keputusan; menghindari dan mencegah terjadinya pertentangan kepentingan (conflict of interest); serta tidak menerima, tidak menawarkan, atau tidak menjanjikan untuk memberi atau menerima hadiah, imbalan, komisi, rabat, dan apa saja dari atau kepada siapapun yang diketahui atau patut diduga berkaitan dengan Pengadaan Barang/Jasa."
+                }
+              ],
+              "penjelasans": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "jenis": "PERPRES",
+      "nomor": "Nomor 82",
+      "tahun": 2018,
+      "judul": "Peraturan Presiden Republik Indonesia Nomor 82 Tahun 2018",
+      "tentang": "Jaminan Kesehatan (BPJS Kesehatan)",
+      "tanggalPenetapan": "17 September 2018",
+      "status": "Berlaku",
+      "urutanHierarki": 5,
+      "deskripsiSingkat": "Penyelenggaraan Program Jaminan Kesehatan Nasional bagi seluruh penduduk Indonesia termasuk kepesertaan, manfaat, dan pelayanan fasilitas kesehatan.",
+      "babs": [
+        {
+          "nomorBab": "Bab II",
+          "judulBab": "Kepesertaan Jaminan Kesehatan",
+          "urutan": 1,
+          "pasals": [
+            {
+              "nomorPasal": "Pasal 4",
+              "judulPasal": "Kewajiban Kepesertaan Jaminan Kesehatan",
+              "urutan": 1,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "(1)",
+                  "isiAyat": "Setiap penduduk Indonesia wajib ikut serta dalam program Jaminan Kesehatan."
+                },
+                {
+                  "nomorAyat": 2,
+                  "labelAyat": "(2)",
+                  "isiAyat": "Pemberi Kerja wajib mendaftarkan dirinya dan Pekerjanya sebagai Peserta Jaminan Kesehatan kepada BPJS Kesehatan dengan membayar Iuran."
+                }
+              ],
+              "penjelasans": []
+            }
+          ]
+        },
+        {
+          "nomorBab": "Bab IV",
+          "judulBab": "Manfaat Jaminan Kesehatan",
+          "urutan": 2,
+          "pasals": [
+            {
+              "nomorPasal": "Pasal 46",
+              "judulPasal": "Cakupan Manfaat Pelayanan Kesehatan Komprehensif",
+              "urutan": 1,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "(1)",
+                  "isiAyat": "Setiap Peserta berhak memperoleh Manfaat Jaminan Kesehatan yang bersifat pelayanan kesehatan perorangan, mencakup pelayanan promotif, preventif, kuratif, dan rehabilitatif termasuk pelayanan obat, alat kesehatan, dan bahan medis habis pakai sesuai dengan kebutuhan medis yang diperlukan."
+                }
+              ],
+              "penjelasans": []
+            },
+            {
+              "nomorPasal": "Pasal 52",
+              "judulPasal": "Pelayanan yang Tidak Dijamin BPJS Kesehatan",
+              "urutan": 2,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "(1)",
+                  "isiAyat": "Pelayanan kesehatan yang tidak dijamin meliputi: pelayanan kesehatan yang dilakukan tanpa melalui prosedur yang berlaku; pelayanan kesehatan yang dilakukan di Fasilitas Kesehatan yang tidak bekerja sama dengan BPJS Kesehatan kecuali dalam keadaan darurat; pelayanan kesehatan untuk tujuan estetik; serta pelayanan untuk mengatasi infertilitas."
+                }
+              ],
+              "penjelasans": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "jenis": "PERDA_PROV",
+      "nomor": "Nomor 8",
+      "tahun": 2007,
+      "judul": "Peraturan Daerah Provinsi Daerah Khusus Ibukota Jakarta Nomor 8 Tahun 2007",
+      "tentang": "Ketertiban Umum di Provinsi DKI Jakarta",
+      "tanggalPenetapan": "5 Oktober 2007",
+      "status": "Berlaku",
+      "urutanHierarki": 6,
+      "deskripsiSingkat": "Menata ketertiban jalan, angkutan umum, fasilitas publik, tata ruang lingkungan, serta larangan merokok dan menjaga kebersihan ibukota Jakarta.",
+      "babs": [
+        {
+          "nomorBab": "Bab II",
+          "judulBab": "Tertib Jalan, Angkutan Jalan dan Angkutan Sungai",
+          "urutan": 1,
+          "pasals": [
+            {
+              "nomorPasal": "Pasal 3",
+              "judulPasal": "Larangan Berjualan dan Memasang Benda di Jalur Jalan",
+              "urutan": 1,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "Huruf a",
+                  "isiAyat": "Setiap orang atau badan dilarang menutup jalan tanpa izin tertulis dari Gubernur atau pejabat yang ditunjuk."
+                },
+                {
+                  "nomorAyat": 2,
+                  "labelAyat": "Huruf g",
+                  "isiAyat": "Setiap orang atau badan dilarang berdagang, berusaha di bagian jalan/trotoar, halte, jembatan penyeberangan orang (JPO) dan tempat-tempat untuk kepentingan umum lainnya di luar dari tempat yang telah ditetapkan."
+                }
+              ],
+              "penjelasans": []
+            },
+            {
+              "nomorPasal": "Pasal 7",
+              "judulPasal": "Ketertiban Penyeberangan dan Pejalan Kaki di Jakarta",
+              "urutan": 2,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "(1)",
+                  "isiAyat": "Setiap pejalan kaki wajib berjalan di bagian jalan yang diperuntukkan bagi pejalan kaki (trotoar) atau di tepi jalan apabila tidak terdapat trotoar."
+                },
+                {
+                  "nomorAyat": 2,
+                  "labelAyat": "(2)",
+                  "isiAyat": "Setiap pejalan kaki yang hendak menyeberang jalan wajib menggunakan fasilitas jembatan penyeberangan orang (JPO) atau marka tempat penyeberangan (zebra cross) yang telah disediakan."
+                }
+              ],
+              "penjelasans": []
+            }
+          ]
+        },
+        {
+          "nomorBab": "Bab IV",
+          "judulBab": "Tertib Lingkungan dan Kebersihan di Jakarta",
+          "urutan": 2,
+          "pasals": [
+            {
+              "nomorPasal": "Pasal 13",
+              "judulPasal": "Larangan Membuang Sampah Sembarangan di DKI Jakarta",
+              "urutan": 1,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "Ayat 1",
+                  "isiAyat": "Setiap orang atau badan dilarang membuang sampah di jalan, jalur hijau, taman, sungai, kali, saluran air, dan tempat-tempat umum lainnya di wilayah Provinsi DKI Jakarta."
+                }
+              ],
+              "penjelasans": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "jenis": "PERDA_PROV",
+      "nomor": "Nomor 1",
+      "tahun": 2021,
+      "judul": "Peraturan Daerah Provinsi Jawa Barat Nomor 1 Tahun 2021",
+      "tentang": "Penyelenggaraan Ketenteraman, Ketertiban Umum, dan Perlindungan Masyarakat",
+      "tanggalPenetapan": "29 Januari 2021",
+      "status": "Berlaku",
+      "urutanHierarki": 6,
+      "deskripsiSingkat": "Pedoman pemeliharaan ketenteraman dan ketertiban umum (Trantibum) serta perlindungan masyarakat di seluruh wilayah Provinsi Jawa Barat.",
+      "babs": [
+        {
+          "nomorBab": "Bab III",
+          "judulBab": "Ruang Lingkup Ketenteraman dan Ketertiban Umum Jawa Barat",
+          "urutan": 1,
+          "pasals": [
+            {
+              "nomorPasal": "Pasal 9",
+              "judulPasal": "Tertib Ruang Publik dan Fasilitas Umum Daerah",
+              "urutan": 1,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "(1)",
+                  "isiAyat": "Setiap orang atau badan dalam memanfaatkan ruang publik dan fasilitas umum di wilayah Daerah Provinsi Jawa Barat wajib menjaga ketenteraman, kebersihan, keindahan, dan fungsi peruntukannya."
+                },
+                {
+                  "nomorAyat": 2,
+                  "labelAyat": "(2)",
+                  "isiAyat": "Dilarang merusak, mengubah, memindahkan, atau menghilangkan sarana dan prasarana umum milik Pemerintah Daerah Provinsi Jawa Barat tanpa izin yang sah."
+                }
+              ],
+              "penjelasans": []
+            },
+            {
+              "nomorPasal": "Pasal 21",
+              "judulPasal": "Peran Serta Masyarakat dalam Penegakan Perda",
+              "urutan": 2,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "Peran",
+                  "isiAyat": "Masyarakat berhak berperan serta dalam penyelenggaraan ketenteraman, ketertiban umum, dan perlindungan masyarakat dengan memberikan laporan, informasi, dan saran kepada Satuan Polisi Pamong Praja (Satpol PP) atas terjadinya pelanggaran ketentuan Peraturan Daerah."
+                }
+              ],
+              "penjelasans": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "jenis": "PERDA_KAB",
+      "nomor": "Nomor 2",
+      "tahun": 2020,
+      "judul": "Peraturan Daerah Kota Surabaya Nomor 2 Tahun 2020",
+      "tentang": "Penyelenggaraan Ketertiban Umum dan Ketenteraman Masyarakat Kota Surabaya",
+      "tanggalPenetapan": "12 Maret 2020",
+      "status": "Berlaku",
+      "urutanHierarki": 7,
+      "deskripsiSingkat": "Mengatur ketertiban ruang publik, tata kelola fasilitas umum kota pahlawan, kebersihan lingkungan, serta penertiban PKL di Kota Surabaya.",
+      "babs": [
+        {
+          "nomorBab": "Bab IV",
+          "judulBab": "Ketertiban Pemanfaatan Jalan dan Fasilitas Umum Surabaya",
+          "urutan": 1,
+          "pasals": [
+            {
+              "nomorPasal": "Pasal 6",
+              "judulPasal": "Pemanfaatan Trotoar dan Jalur Hijau Kota Surabaya",
+              "urutan": 1,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "(1)",
+                  "isiAyat": "Trotoar, jalur hijau, taman kota, dan jembatan penyeberangan di Kota Surabaya hanya diperuntukkan bagi pejalan kaki dan fungsi penghijauan kota."
+                },
+                {
+                  "nomorAyat": 2,
+                  "labelAyat": "(2)",
+                  "isiAyat": "Setiap orang atau badan dilarang memarkir kendaraan, menaruh barang dagangan, atau mendirikan bangunan liar di atas trotoar dan pedestrian Kota Surabaya tanpa izin resmi dari Walikota."
+                }
+              ],
+              "penjelasans": []
+            },
+            {
+              "nomorPasal": "Pasal 18",
+              "judulPasal": "Kebersihan dan Pengelolaan Sampah Kota Surabaya",
+              "urutan": 2,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "Larangan",
+                  "isiAyat": "Setiap orang dilarang membuang sampah di jalan, saluran air, got, sungai, waduk, atau tempat lain yang bukan tempat penampungan sampah sementara yang resmi di Kota Surabaya, dan pelanggar dapat dikenakan sanksi denda administratif maupun sanksi kerja sosial."
+                }
+              ],
+              "penjelasans": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "jenis": "PERDA_KAB",
+      "nomor": "Nomor 9",
+      "tahun": 2019,
+      "judul": "Peraturan Daerah Kota Bandung Nomor 9 Tahun 2019",
+      "tentang": "Ketertiban Umum, Ketenteraman dan Perlindungan Masyarakat Kota Bandung",
+      "tanggalPenetapan": "18 November 2019",
+      "status": "Berlaku",
+      "urutanHierarki": 7,
+      "deskripsiSingkat": "Pedoman ketertiban tata ruang kota, penataan zonasi Pedagang Kaki Lima (PKL), penertiban parkir liar, dan kenyamanan publik di Kota Bandung.",
+      "babs": [
+        {
+          "nomorBab": "Bab V",
+          "judulBab": "Penataan Zonasi Usaha dan Pedagang Kaki Lima Kota Bandung",
+          "urutan": 1,
+          "pasals": [
+            {
+              "nomorPasal": "Pasal 12",
+              "judulPasal": "Zonasi Penataan PKL (Merah, Kuning, Hijau) Kota Bandung",
+              "urutan": 1,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "(1)",
+                  "isiAyat": "Penataan lokasi kegiatan usaha bagi Pedagang Kaki Lima (PKL) di Kota Bandung dibagi menjadi 3 (tiga) zona: Zona Merah (lokasi terlarang bagi PKL), Zona Kuning (lokasi yang diperbolehkan dengan jadwal dan syarat tertentu), dan Zona Hijau (lokasi yang diperbolehkan)."
+                },
+                {
+                  "nomorAyat": 2,
+                  "labelAyat": "(2)",
+                  "isiAyat": "Masyarakat dilarang membeli barang dagangan dari pedagang kaki lima yang beroperasi di Zona Merah Kota Bandung."
+                }
+              ],
+              "penjelasans": []
+            },
+            {
+              "nomorPasal": "Pasal 24",
+              "judulPasal": "Penegakan Disiplin Parkir dan Fasilitas Pejalan Kaki",
+              "urutan": 2,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "Parkir",
+                  "isiAyat": "Setiap orang dilarang memarkirkan kendaraan bermotor di atas trotoar, jalur sepeda, zebra cross, dan taman kota di seluruh wilayah Kota Bandung."
+                }
+              ],
+              "penjelasans": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "jenis": "PERDA_KAB",
+      "nomor": "Nomor 6",
+      "tahun": 2015,
+      "judul": "Peraturan Daerah Kota Medan Nomor 6 Tahun 2015",
+      "tentang": "Pengelolaan Persampahan dan Kebersihan Kota Medan",
+      "tanggalPenetapan": "30 Desember 2015",
+      "status": "Berlaku",
+      "urutanHierarki": 7,
+      "deskripsiSingkat": "Kewajiban pemeliharaan kebersihan lingkungan perkotaan, tata cara pemilahan sampah dari sumbernya, dan sanksi tindak pidana pembuangan sampah sembarangan di Kota Medan.",
+      "babs": [
+        {
+          "nomorBab": "Bab VI",
+          "judulBab": "Hak dan Kewajiban Masyarakat Kota Medan",
+          "urutan": 1,
+          "pasals": [
+            {
+              "nomorPasal": "Pasal 14",
+              "judulPasal": "Kewajiban Pengurangan dan Pemilahan Sampah",
+              "urutan": 1,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "(1)",
+                  "isiAyat": "Setiap orang, instansi, maupun pelaku usaha di Kota Medan berkewajiban melakukan pengurangan sampah dan pemilahan sampah organik serta anorganik pada tempat penampungan masing-masing."
+                }
+              ],
+              "penjelasans": []
+            },
+            {
+              "nomorPasal": "Pasal 32",
+              "judulPasal": "Larangan Membuang Sampah ke Drainase dan Sungai Medan",
+              "urutan": 2,
+              "ayats": [
+                {
+                  "nomorAyat": 1,
+                  "labelAyat": "Larangan",
+                  "isiAyat": "Setiap orang atau badan usaha dilarang membuang sampah atau limbah ke dalam saluran drainase, parit, riol, sungai, jalan umum, dan tempat terbuka lainnya di wilayah Kota Medan."
+                },
+                {
+                  "nomorAyat": 2,
+                  "labelAyat": "Sanksi",
+                  "isiAyat": "Pelanggaran terhadap ketentuan larangan membuang sampah sembarangan di Kota Medan dikenakan pidana kurungan paling lama 3 (tiga) bulan atau pidana denda paling banyak Rp 10.000.000 (sepuluh juta rupiah) bagi perorangan."
+                }
+              ],
+              "penjelasans": []
+            }
+          ]
+        }
+      ]
     }
   ]
 }

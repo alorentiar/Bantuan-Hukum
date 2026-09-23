@@ -23,6 +23,7 @@ data class LegalAppUiState(
     val isSearching: Boolean = false,
     val regulations: List<PeraturanEntity> = emptyList(),
     val currentScreen: ScreenDestination = ScreenDestination.SEARCH,
+    val previousScreen: ScreenDestination = ScreenDestination.SEARCH,
     val selectedPeraturan: PeraturanEntity? = null,
     val selectedPeraturanBabs: List<BabEntity> = emptyList(),
     val selectedPasalId: Long? = null,

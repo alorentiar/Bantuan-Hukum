@@ -137,7 +137,10 @@ fun SearchResultCard(
 
             // Highlighted Snippet
             val snippetText = item.matchedSnippet.ifBlank { item.konten.take(160) }
-            val highlightedString = highlightKeywords(snippetText, queryKeywords, MaterialTheme.colorScheme.secondary)
+            val highlightColor = MaterialTheme.colorScheme.primary
+            val highlightedString = androidx.compose.runtime.remember(snippetText, queryKeywords, highlightColor) {
+                highlightKeywords(snippetText, queryKeywords, highlightColor)
+            }
 
             Text(
                 text = highlightedString,
@@ -154,7 +157,6 @@ fun SearchResultCard(
 /**
  * Highlighting kata kunci pencarian dalam teks hasil
  */
-@Composable
 private fun highlightKeywords(
     text: String,
     keywords: List<String>,

@@ -138,8 +138,12 @@ fun SearchScreen(
                     val categories = listOf(
                         "SEMUA" to "Semua",
                         "UUD_1945" to "UUD 1945",
+                        "TAP_MPR" to "TAP MPR",
                         "UU" to "Undang-Undang",
-                        "PP" to "Peraturan Pemerintah"
+                        "PP" to "PP",
+                        "PERPRES" to "Perpres",
+                        "PERDA_PROV" to "Perda Prov",
+                        "PERDA_KAB" to "Perda Kab/Kota"
                     )
 
                     categories.forEach { (catCode, catLabel) ->
@@ -206,6 +210,12 @@ fun SearchScreen(
                             horizontalArrangement = Arrangement.spacedBy(8.dp)
                         ) {
                             val pills = listOf(
+                                "Perkawinan" to "perkawinan",
+                                "Pengadaan Barang" to "Pengadaan Barang",
+                                "BPJS Kesehatan" to "Jaminan Kesehatan",
+                                "Ketertiban Umum" to "Ketertiban Umum",
+                                "Perda PKL" to "Pedagang Kaki Lima",
+                                "Sampah & Drainase" to "pembuangan sampah",
                                 "Pasal 27" to "Pasal 27",
                                 "HAM Pasal 28" to "Pasal 28",
                                 "Perekonomian" to "Pasal 33",
